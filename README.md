@@ -272,7 +272,6 @@ Before running ThreatLens.AI, ensure you have the following installed on your ma
 
 ### One-Click Launch
 
-#### Local Mode (Recommended for Testing & Development)
 Launches both the FastAPI backend (port `8000`) and the Vite React frontend (port `5173`) concurrently:
 ```bash
 chmod +x launch_local.sh
@@ -282,12 +281,6 @@ chmod +x launch_local.sh
 - 🌐 **Web Dashboard**: [http://localhost:5173](http://localhost:5173)
 - 🔌 **Backend API**: [http://localhost:8000](http://localhost:8000)
 - 📚 **Interactive Swagger API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
-
-#### Remote / Tunnel Mode (with ngrok)
-```bash
-chmod +x launch.sh
-./launch.sh
-```
 
 ---
 
