@@ -40,7 +40,6 @@
 - [✨ Key Features](#-key-features)
 - [🏗️ Architecture & System Design](#️-architecture--system-design)
 - [🧮 The PSSS Scoring Formula](#-the-psss-scoring-formula)
-- [📁 Project Structure](#-project-structure)
 - [⚙️ Setup Instructions](#️-setup-instructions)
   - [Prerequisites](#prerequisites)
   - [Environment Setup](#environment-setup)
@@ -224,51 +223,6 @@ $$
 
 ### Machine Learning Vector Imputer
 When vulnerabilities lack published CVSS v3.1 vector strings, the backend ML pipeline employs **TF-IDF n-gram vectorization** combined with **Logistic Regression classifiers** trained on NVD datasets to predict missing metrics (`AV`, `AC`, `PR`, `UI`, `S`, `C`, `I`, `A`) and compute base scores on the fly.
-
----
-
-## 📁 Project Structure
-
-```
-ThreatLens-AI/
-├── backend/
-│   ├── main.py                     # FastAPI application routes & middleware
-│   ├── psss_engine.py              # PSSS formula engine & ML vector imputer
-│   ├── tools.py                    # Autonomous AI tool schemas & execution logic
-│   ├── requirements.txt            # Python dependencies
-│   ├── nvdcve-2.0-modified.json    # NVD CVE vulnerability dataset
-│   └── README.md                   # Backend specific documentation
-├── frontend/
-│   ├── src/
-│   │   ├── api/                    # Axios API client & backend connectors
-│   │   ├── assets/                 # Brand logos, icons, and SVG assets
-│   │   ├── components/             # Reusable UI components
-│   │   │   ├── AIChatSidebar.tsx   # Sentinel AI copilot (Gemini & Ollama)
-│   │   │   ├── Header.tsx          # System health banner & notifications
-│   │   │   ├── MetricCard.tsx      # Stat counters & metric widgets
-│   │   │   ├── PsssBadge.tsx       # Dynamic severity & score badges
-│   │   │   ├── RemediationModal.tsx# Triage workflow & ticket dispatch
-│   │   │   ├── Sidebar.tsx         # Primary navigation sidebar
-│   │   │   └── UserModal.tsx       # User permissions & RBAC editor
-│   │   ├── planes/                 # Main application dashboard views
-│   │   │   ├── CommandCenter.tsx   # Vulnerability triage queue & metrics
-│   │   │   ├── ThreatEngine.tsx    # MITRE heatmap, CVE rank, CIA triad
-│   │   │   ├── IntelReportGenerator.tsx # Print-ready PDF report builder
-│   │   │   ├── SystemAudit.tsx     # Real-time event & audit log explorer
-│   │   │   └── UserManagement.tsx  # User roles & permissions view
-│   │   ├── types/                  # TypeScript interface & type definitions
-│   │   ├── App.tsx                 # Root application container & plane routing
-│   │   ├── index.css               # Cyberpunk design system & print styles
-│   │   └── main.tsx                # React DOM entry point
-│   ├── .env.example                # Template for frontend environment variables
-│   ├── package.json                # Frontend dependencies & build scripts
-│   ├── tsconfig.json               # TypeScript compiler configuration
-│   └── vite.config.ts              # Vite bundler & backend proxy config
-├── launch_local.sh                 # Local startup script (FastAPI + Vite)
-├── launch.sh                       # Production/Demo startup script (with ngrok)
-├── .gitignore                      # Git ignore patterns (protects .env & secrets)
-└── README.md                       # Main repository documentation
-```
 
 ---
 
