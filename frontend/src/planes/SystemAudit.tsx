@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { AuditLogEvent, PipelineHealth, FormulaWeights } from '../types';
 import { ShieldCheck, Activity, Sliders, FileCode } from 'lucide-react';
+import { formatDateTime } from '../utils/dateTime';
 
 interface SystemAuditProps {
   auditLogs: AuditLogEvent[];
@@ -237,9 +238,9 @@ export const SystemAudit: React.FC<SystemAuditProps> = ({
                   </div>
                 </div>
 
-                <div className="text-right shrink-0 font-mono text-[11px] text-on-surface-variant">
-                  <div>{new Date(log.timestamp).toLocaleTimeString()}</div>
-                  <span className="text-primary-bright font-bold text-[10px] group-hover:underline">
+                <div className="text-right shrink-0 font-mono text-[11px] text-on-surface-variant space-y-0.5">
+                  <div className="text-on-surface font-semibold">{formatDateTime(log.timestamp)}</div>
+                  <span className="text-primary-bright font-bold text-[10px] group-hover:underline block">
                     View Diff JSON →
                   </span>
                 </div>

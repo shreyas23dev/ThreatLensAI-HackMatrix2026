@@ -1,6 +1,7 @@
 import React from 'react';
 import type { AuditLogEvent } from '../types';
 import { X, ShieldAlert, FileCode, Clock, User, Globe } from 'lucide-react';
+import { formatDateTime } from '../utils/dateTime';
 
 interface AuditDetailModalProps {
   event: AuditLogEvent | null;
@@ -63,11 +64,11 @@ export const AuditDetailModal: React.FC<AuditDetailModalProps> = ({ event, onClo
               <span className="text-on-surface-variant/70 text-[10px] uppercase flex items-center gap-1">
                 <Clock className="w-3 h-3" /> Timestamp
               </span>
-              <div className="font-bold text-on-surface mt-1">
-                {new Date(event.timestamp).toLocaleTimeString()}
+              <div className="font-bold text-on-surface mt-1 text-[11px]">
+                {formatDateTime(event.timestamp)}
               </div>
-              <div className="text-[10px] text-on-surface-variant">
-                {new Date(event.timestamp).toLocaleDateString()}
+              <div className="text-[10px] text-emerald-400">
+                Verified Event Time
               </div>
             </div>
 

@@ -345,9 +345,14 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
                     </div>
                   </div>
 
-                  <div>
+                  <div className="min-w-0 overflow-hidden">
                     <span className="text-on-surface-variant/70 text-[10px]">CWE Taxonomy:</span>
-                    <div className="font-bold text-on-surface truncate">{selectedVulnerability.cwe}</div>
+                    <div 
+                      className="font-bold text-on-surface truncate whitespace-nowrap overflow-hidden text-ellipsis cursor-help"
+                      title={selectedVulnerability.cwe}
+                    >
+                      {selectedVulnerability.cwe}
+                    </div>
                   </div>
 
                   <div>

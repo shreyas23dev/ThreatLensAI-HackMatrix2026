@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { ThreatActor, Vulnerability } from '../types';
 import { PsssBadge } from '../components/PsssBadge';
+import { formatDateTime } from '../utils/dateTime';
 import { 
   Skull, 
   Globe, 
@@ -385,14 +386,14 @@ export const ThreatEngine: React.FC<ThreatEngineProps> = ({
                   <div
                     key={actor.id}
                     onClick={() => setSelectedActor(actor)}
-                    className={`glass-panel p-4 rounded-lg border transition-all cursor-pointer ${
+                    className={`glass-panel p-4.5 rounded-lg border transition-all cursor-pointer ${
                       isSelected
                         ? 'border-primary bg-primary/10 shadow-glow-cyan'
                         : 'border-outline-variant/30 hover:border-primary/40'
                     }`}
                   >
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-2">
+                    <div className="flex items-start justify-between w-full">
+                      <div className="space-y-2.5 w-full">
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-bold text-on-surface">{actor.name}</span>
                           <span className="px-2 py-0.5 rounded text-[10px] bg-error-container/40 text-error border border-error/40 font-bold uppercase">
@@ -400,22 +401,22 @@ export const ThreatEngine: React.FC<ThreatEngineProps> = ({
                           </span>
                         </div>
 
-                        <div className="text-xs text-on-surface-variant flex items-center gap-4">
+                        <div className="text-xs text-on-surface-variant flex items-center gap-4 flex-wrap">
                           <span className="flex items-center gap-1">
                             <Globe className="w-3.5 h-3.5 text-primary-bright" />
                             {actor.origin}
                           </span>
                           <span>
-                            Last Active: <strong className="text-on-surface">{new Date(actor.lastActive).toLocaleTimeString()}</strong>
+                            Last Active: <strong className="text-on-surface">{formatDateTime(actor.lastActive)}</strong>
                           </span>
                         </div>
 
-                        <div className="flex items-center gap-1.5 flex-wrap pt-1">
-                          <span className="text-[10px] text-on-surface-variant uppercase">Target Sectors:</span>
+                        <div className="flex items-center gap-1.5 flex-wrap pt-1.5 pb-0.5 leading-normal">
+                          <span className="text-[10px] text-on-surface-variant uppercase font-semibold">Target Sectors:</span>
                           {actor.targetSectors.map((sector) => (
                             <span
                               key={sector}
-                              className="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px]"
+                              className="px-2 py-0.5 rounded bg-surface-container-highest border border-outline-variant/30 text-on-surface-variant text-[10px] whitespace-nowrap inline-block"
                             >
                               {sector}
                             </span>
@@ -1017,7 +1018,10 @@ export const ThreatEngine: React.FC<ThreatEngineProps> = ({
                       <span className="text-[10px] text-on-surface-variant uppercase font-bold block mb-1">
                         Weakness Classification (CWE):
                       </span>
-                      <span className="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 text-on-surface text-xs font-mono block">
+                      <span 
+                        className="px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40 text-on-surface text-xs font-mono block truncate"
+                        title={selectedBarVuln.cwe}
+                      >
                         {selectedBarVuln.cwe}
                       </span>
                     </div>

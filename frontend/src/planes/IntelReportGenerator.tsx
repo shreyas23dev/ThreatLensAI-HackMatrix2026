@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { IntelReportConfig, Vulnerability } from '../types';
+import { formatDateTime } from '../utils/dateTime';
 import { 
   FileSpreadsheet, 
   Download, 
@@ -295,7 +296,7 @@ export const IntelReportGenerator: React.FC<IntelReportGeneratorProps> = ({ vuln
                     Doc Ref: <strong>TL-INTEL-2026-0729-A</strong>
                   </div>
                   <div className="text-on-surface-variant">
-                    Generated: <strong>{new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</strong>
+                    Generated: <strong className="text-on-surface">{formatDateTime(new Date())}</strong>
                   </div>
                 </div>
               </div>

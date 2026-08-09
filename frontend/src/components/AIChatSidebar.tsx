@@ -770,28 +770,28 @@ export const AIChatSidebar: React.FC = () => {
                 Ask about vulnerabilities, recalibrate PSSS weights, inspect threat actors, or run ML vector predictions.
               </p>
             </div>
-            <div className="pt-2 flex flex-wrap gap-1.5 justify-center max-w-md">
+            <div className="pt-2 flex flex-wrap gap-2 justify-center max-w-md">
               <button
                 onClick={() => setInputQuery("Use your 'get_random_nvd_cves' tool to fetch 20 random CVEs from the NVD dataset, parse their metrics, calculate their PSSS priority scores, and rank them from highest to lowest risk in a prioritized response table.")}
-                className="text-[10px] font-mono px-3 py-1.5 rounded-full bg-primary/20 hover:bg-primary/30 border border-primary/50 text-primary-bright font-bold transition-all shadow-glow-cyan flex items-center gap-1"
+                className="text-[10px] font-mono px-3 py-1.5 rounded-full bg-primary/20 hover:bg-primary/30 active:bg-primary/40 border border-primary/50 text-primary-bright font-bold transition-all shadow-glow-cyan flex items-center gap-1.5 cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface"
               >
                 ⚡ "Load & Prioritize 20 NVD CVEs"
               </button>
               <button
                 onClick={() => setInputQuery("What critical vulnerabilities are currently unassigned?")}
-                className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-primary-bright transition-all"
+                className="text-[10px] font-mono px-3 py-1.5 rounded-full bg-surface-container hover:bg-primary/20 active:bg-primary/30 border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-primary-bright font-medium transition-all hover:shadow-glow-cyan cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface"
               >
                 "List unassigned critical CVEs"
               </button>
               <button
                 onClick={() => setInputQuery("Show intelligence details for threat actor Cozy Bear APT29.")}
-                className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-primary-bright transition-all"
+                className="text-[10px] font-mono px-3 py-1.5 rounded-full bg-surface-container hover:bg-primary/20 active:bg-primary/30 border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-primary-bright font-medium transition-all hover:shadow-glow-cyan cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface"
               >
                 "Check Cozy Bear threat actor details"
               </button>
               <button
                 onClick={() => setInputQuery("Recalibrate scoring weights: CVSS 0.40, EPSS 0.40, Asset 0.20, Threat Actor Multiplier 1.3")}
-                className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-primary-bright transition-all"
+                className="text-[10px] font-mono px-3 py-1.5 rounded-full bg-surface-container hover:bg-primary/20 active:bg-primary/30 border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-primary-bright font-medium transition-all hover:shadow-glow-cyan cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1 focus:ring-offset-surface"
               >
                 "Recalibrate PSSS weights"
               </button>

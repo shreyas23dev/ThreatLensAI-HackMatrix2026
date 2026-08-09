@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import type { IAMUser, UserRole } from '../types';
 import { Users, UserPlus, Lock, Globe, Key } from 'lucide-react';
+import { formatDateTime } from '../utils/dateTime';
+
+const parseLocationAndIp = (locStr: string) => {
+  if (!locStr) return { location: 'Unknown Location', ip: null };
+  const match = locStr.match(/^(.*?)\s*(?:\(IP:\s*([^)]+)\))?$/i);
+  if (match && match[2]) {
+    return { location: match[1].trim(), ip: match[2].trim() };
+  }
+  return { location: locStr, ip: null };
+};
 
 interface UserManagementProps {
   users: IAMUser[];
@@ -77,9 +87,9 @@ export const UserManagement: React.FC<UserManagementProps> = ({
                       : 'border-outline-variant/30 hover:border-primary/40'
                   }`}
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
+                  <div className="flex items-start justify-between w-full">
+                    <div className="space-y-2.5 w-full pr-3">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <span className="font-bold text-on-surface text-sm">{user.name}</span>
                         <span className={`px-2 py-0.5 rounded text-[10px] border font-bold ${getRoleBadge(user.role)}`}>
                           {user.role.replace('_', ' ')}
@@ -89,18 +99,44 @@ export const UserManagement: React.FC<UserManagementProps> = ({
                             <Lock className="w-3 h-3" /> MFA
                           </span>
                         )}
-                      </div>
-
-                      <div className="text-xs text-on-surface-variant flex items-center gap-4">
-                        <span>{user.email}</span>
-                        <span className="flex items-center gap-1">
-                          <Globe className="w-3.5 h-3.5 text-primary-bright" />
-                          {user.location}
+                        <span className={`px-1.5 py-0.5 rounded text-[9px] font-bold uppercase ${
+                          user.status === 'ACTIVE'
+                            ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                            : 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
+                        }`}>
+                          {user.status}
                         </span>
                       </div>
 
-                      <div className="text-[10px] text-on-surface-variant/70">
-                        Last Active: <strong className="text-on-surface">{user.lastLogin}</strong>
+                      {/* Location, IP, and Email row with standardized spacing */}
+                      {(() => {
+                        const { location, ip } = parseLocationAndIp(user.location);
+                        return (
+                          <div className="text-xs text-on-surface-variant flex items-center gap-3 flex-wrap">
+                            <span className="text-on-surface/90 font-medium">{user.email}</span>
+                            <span className="text-outline-variant/60 select-none">•</span>
+                            <span className="flex items-center gap-1.5">
+                              <Globe className="w-3.5 h-3.5 text-primary-bright shrink-0" />
+                              <span>{location}</span>
+                            </span>
+                            {ip && (
+                              <>
+                                <span className="text-outline-variant/60 select-none">•</span>
+                                <span className="font-mono text-[11px] px-1.5 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-on-surface">
+                                  IP: {ip}
+                                </span>
+                              </>
+                            )}
+                          </div>
+                        );
+                      })()}
+
+                      {/* Standardized Timestamp Badge */}
+                      <div className="flex items-center gap-2 text-[10px] text-on-surface-variant/80 pt-0.5">
+                        <span>Last Active:</span>
+                        <span className="font-mono font-semibold text-on-surface px-1.5 py-0.5 rounded bg-surface-container border border-outline-variant/30">
+                          {formatDateTime(user.lastLogin)}
+                        </span>
                       </div>
                     </div>
 
@@ -109,7 +145,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
                         e.stopPropagation();
                         onOpenUserModal(user);
                       }}
-                      className="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high border border-outline-variant/40 text-on-surface text-[11px] font-bold"
+                      className="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high border border-outline-variant/40 text-on-surface text-[11px] font-bold shrink-0 transition-colors"
                     >
                       Edit IAM
                     </button>
