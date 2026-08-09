@@ -1,10 +1,11 @@
 # 🛡️ ThreatLens.AI
 
-> **Adaptive Vulnerability Prioritization Engine & Cyber Threat Intelligence Command Center**  
-> *Empowering SOC analysts and CISOs to prioritize, triage, and remediate high-impact vulnerabilities using dynamic PSSS scoring, MITRE ATT&CK contextualization, and autonomous AI agents.*
+### **Adaptive Vulnerability Prioritization Engine & Cyber Threat Intelligence Command Center**
+*Empowering SOC analysts, incident response teams, and CISOs to triage, contextualize, and remediate high-impact vulnerabilities using dynamic PSSS scoring, MITRE ATT&CK intelligence, and autonomous AI agents.*
 
 ---
 
+[![Team: Stratos](https://img.shields.io/badge/Team-Stratos-FF6B6B.svg?style=flat-square&logo=shield)](https://github.com/shreyas23dev/ThreatLens-AI)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100.0+-009688.svg?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/React-19.x-61DAFB.svg?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -17,36 +18,126 @@
 
 ---
 
+## 📌 Project & Team Summary
+
+| Property | Details |
+| :--- | :--- |
+| **Project Title** | **ThreatLens.AI** |
+| **Team Name** | **Stratos** |
+| **Live Demonstration Link** | 🔗 *[Live Demo Placeholder — Deployment in Progress](#-live-demonstration-link)* |
+| **Primary Domain** | Cybersecurity, Threat Intelligence, Predictive Risk Scoring & Autonomous AI |
+
+---
+
 ## 📑 Table of Contents
 
-- [Executive Summary](#-executive-summary)
-- [Key Features](#-key-features)
-- [Architecture & System Design](#-architecture--system-design)
-- [The PSSS Scoring Formula](#-the-psss-scoring-formula)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
+- [📌 Project & Team Summary](#-project--team-summary)
+- [👥 Team Members](#-team-members)
+- [🚨 Problem Statement](#-problem-statement)
+- [💡 Solution Overview](#-solution-overview)
+- [🌐 Live Demonstration Link](#-live-demonstration-link)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [✨ Key Features](#-key-features)
+- [🏗️ Architecture & System Design](#️-architecture--system-design)
+- [🧮 The PSSS Scoring Formula](#-the-psss-scoring-formula)
+- [📁 Project Structure](#-project-structure)
+- [⚙️ Setup Instructions](#️-setup-instructions)
   - [Prerequisites](#prerequisites)
   - [Environment Setup](#environment-setup)
   - [One-Click Launch](#one-click-launch)
   - [Manual Execution](#manual-execution)
-- [Sentinel AI Copilot & Tool Calling](#-sentinel-ai-copilot--tool-calling)
-- [REST API Reference](#-rest-api-reference)
-- [License & Acknowledgements](#-license--acknowledgements)
+- [🤖 Sentinel AI Copilot & Tool Calling](#-sentinel-ai-copilot--tool-calling)
+- [📡 REST API Reference](#-rest-api-reference)
+- [📜 License & Acknowledgements](#-license--acknowledgements)
 
 ---
 
-## 🎯 Executive Summary
+## 👥 Team Members
 
-Modern cybersecurity teams face vulnerability alert fatigue. Traditional static scoring frameworks like **CVSS** measure severity in isolation without considering real-world exploitation probabilities (**EPSS**) or adversary tactics (**MITRE ATT&CK**).
+### **Team: Stratos**
 
-**ThreatLens.AI** solves this by introducing the **Predictive Security Severity Score (PSSS)**: an adaptive, multi-variable ranking engine backed by Machine Learning imputation, threat actor telemetry, and an autonomous AI Copilot (**Sentinel AI**) capable of executing real-time remediation actions and mathematical weight recalibrations.
+| Name | Role | Focus Areas |
+| :--- | :--- | :--- |
+| **Shreyas A** | **Team Leader** | Architecture, PSSS Scoring Engine, AI Agent & Tool Calling Integration |
+| **Trinath Bhattacharya** | **Team Member** | Backend API (FastAPI), ML CVSS Vector Imputer, Pipeline Telemetry |
+| **Vinod Gowda** | **Team Member** | Frontend Dashboard (React 19, TypeScript), MITRE Heatmap & ThreatEngine |
+| **Samruddhi V Achar** | **Team Member** | Executive PDF Report Builder, Data Feeds & RBAC Security Governance |
+
+---
+
+## 🚨 Problem Statement
+
+Modern Security Operations Centers (SOCs) and vulnerability management teams are overwhelmed by the sheer volume of Common Vulnerabilities and Exposures (CVEs) published daily. 
+
+### Key Challenges in Traditional Vulnerability Management:
+1. **Alert Fatigue & Overwhelming Backlog**: Thousands of new vulnerabilities emerge each month. Security analysts spend hours sifting through noisy alerts without knowing which vulnerabilities pose immediate existential risk.
+2. **Limitations of Static CVSS Scores**: Traditional **Common Vulnerability Scoring System (CVSS)** scores only measure intrinsic technical severity in isolation. A CVSS 9.8 vulnerability with zero real-world exploit availability often draws resources away from a CVSS 7.2 vulnerability actively weaponized by ransomware gangs.
+3. **Disconnected Threat Intelligence**: Exploit prediction statistics (**EPSS**), adversary tactics (**MITRE ATT&CK**), and active Advanced Persistent Threat (**APT**) campaigns are siloed in disparate feeds and rarely synthesized dynamically into operational triage queues.
+4. **Slow Manual Triage & Inaction**: Analysts lack autonomous assistance to instantly query vulnerability telemetry, adjust risk weights for unique organization contexts, predict missing CVE vector metrics, and trigger immediate remediation workflows.
+
+---
+
+## 💡 Solution Overview
+
+**ThreatLens.AI** is an adaptive, intelligence-driven vulnerability prioritization engine and cyber threat command center built to transform how enterprises triage security risk.
+
+### Core Innovations & Capabilities:
+
+* **Predictive Security Severity Score (PSSS)**: A composite scoring algorithm that unifies intrinsic severity (CVSS), real-world exploitability probability (EPSS), adversary tactic severity (MITRE ATT&CK criticality), and active APT threat actor multipliers into a single actionable 0–10 risk index.
+* **Autonomous Sentinel AI Copilot**: A dual-provider AI agent (powered by **Google Gemini** or local **Ollama** models) equipped with automated function calling to inspect pipeline health, update vulnerability statuses, override priorities, recalibrate formula weights, and predict CVSS vectors on demand.
+* **Machine Learning Vector Imputer**: Built-in TF-IDF n-gram vectorization and Logistic Regression ML models that predict missing CVSS v3.1 vector metrics (`AV`, `AC`, `PR`, `UI`, `S`, `C`, `I`, `A`) from raw vulnerability text descriptions for zero-day or unclassified CVEs.
+* **Interactive ThreatEngine & Analytics**: Real-time MITRE ATT&CK tactic heatmaps with multi-metric interpolation, Top CVE priority rankings, CIA Triad impact breakdowns, and comprehensive APT actor dossiers with one-click IOC copying.
+* **Executive & Operational Intel Reports**: Print-ready and exportable PDF intelligence briefings with dark preview mode and customizable modules for leadership and auditors.
+
+---
+
+## 🌐 Live Demonstration Link
+
+> 🚀 **Live Demo Status**: *Coming Soon / Under Deployment*
+
+* **Live Demo URL**: `https://threatlens-ai-demo.placeholder.com` *(Placeholder — Live instance link will be populated here upon deployment)*
+* **Local Interactive Demo**: You can run and test the complete application locally in under 2 minutes by following the [Setup Instructions](#️-setup-instructions) below.
+
+---
+
+## 🛠️ Technology Stack
+
+ThreatLens.AI is architected with a modern, high-performance, and modular technology stack:
+
+### **Frontend & UI Layer**
+- **Core Framework**: [React 19](https://react.dev/) (Modern functional components & hooks)
+- **Language**: [TypeScript 5.x](https://www.typescriptlang.org/) (Strict type-safety across all data contracts)
+- **Build Tool & Dev Server**: [Vite 8.x](https://vitejs.dev/) (Sub-second HMR & optimized production bundling)
+- **Styling & UI**: [Tailwind CSS 3.4](https://tailwindcss.com/) with Cyberpunk / SOC dark-mode design system
+- **Icons & Visuals**: [Lucide React](https://lucide.dev/) + Custom SVG Charts & MITRE Matrix Colormaps
+- **Reporting**: Dynamic CSS `@media print` paper rendering & client-side report generator
+
+### **Backend & APIs**
+- **Web Framework**: [FastAPI 0.100+](https://fastapi.tiangolo.com/) (Asynchronous, high-performance REST API)
+- **Runtime & Language**: [Python 3.10+](https://www.python.org/)
+- **Server**: [Uvicorn](https://www.uvicorn.org/) (Lightning-fast ASGI server)
+- **Data Validation & Schemas**: [Pydantic v2](https://docs.pydantic.dev/)
+
+### **Machine Learning & Mathematical Engine**
+- **ML Framework**: [scikit-learn](https://scikit-learn.org/) (TF-IDF Vectorizer + Logistic Regression multi-class classifiers)
+- **Data Processing**: [NumPy](https://numpy.org/) & [Pandas](https://pandas.pydata.org/) (Vectorized matrix operations & statistical interpolation)
+
+### **Artificial Intelligence & LLM Orchestration**
+- **Cloud LLM**: [Google Gemini API](https://ai.google.dev/) (`gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-3.1-flash-lite`, `gemini-3-flash`)
+- **Local / Edge LLM**: [Ollama](https://ollama.ai/) (`llama3.2`, `qwen2.5`, `deepseek-r1`, `mistral`)
+- **Autonomous Tool Calling**: Custom JSON Schema function-calling dispatcher executing real-time backend state modifications
+
+### **Cybersecurity Datasets & Intelligence Feeds**
+- **Vulnerability Data**: [NIST National Vulnerability Database (NVD)](https://nvd.nist.gov/) CVE API v2.0
+- **Exploit Probability**: [FIRST EPSS (Exploit Prediction Scoring System)](https://www.first.org/epss/)
+- **Tactics & Techniques**: [MITRE ATT&CK® Enterprise Matrix](https://attack.mitre.org/)
 
 ---
 
 ## ✨ Key Features
 
 ### 🎛️ 1. Vulnerability Command Center
-- **Syncable Priority Queue**: Interactive vulnerability triage queue with jumbled initialization and one-click sorting by computed PSSS score.
+- **Syncable Priority Queue**: Interactive vulnerability triage queue with initial disorder and one-click sorting by computed PSSS score.
 - **Dynamic Filtering & Search**: Instant filtering by lifecycle status (`UNASSIGNED`, `IN_TRIAGE`, `REMEDIATION_PENDING`, `SUPPRESSED`, `RESOLVED`) and severity (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`).
 - **Remediation & Ticket Dispatch**: Actionable remediation modals featuring command-line patch commands, affected cluster node counts, and integration for dispatching Jira / ServiceNow tickets.
 
@@ -57,7 +148,7 @@ Modern cybersecurity teams face vulnerability alert fatigue. Traditional static 
 - **APT Threat Actor Intelligence**: Detailed dossiers on advanced persistent threats (e.g., APT29 Cozy Bear, APT41 Brass Typhoon), target industries, associated CVEs, and one-click IOC clipboard copy.
 
 ### 🤖 3. Sentinel AI Autonomous Assistant
-- **Dual AI Provider Architecture**: Seamlessly switch between **Google Gemini** (`gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-3.1-flash-lite`, `gemini-3-flash`) and **Ollama Local/Remote Models** (`llama3.2`, `qwen2.5`, `deepseek-r1`, `mistral`).
+- **Dual AI Provider Architecture**: Seamlessly switch between **Google Gemini** and **Ollama Local/Remote Models**.
 - **Autonomous Tool Execution**: Sentinel AI is equipped with function-calling capabilities to fetch vulnerabilities, update lifecycle statuses, modify severity/PSSS scores, recalibrate scoring weights, query pipeline health, and predict CVSS vectors from raw vulnerability descriptions.
 - **Rich Markdown Formatting**: Generates GitHub-flavored tables, code blocks, structured headers, and interactive prompt shortcut chips.
 
@@ -120,7 +211,7 @@ flowchart TB
 ## 🧮 The PSSS Scoring Formula
 
 $$
-\text{PSSS} = \min\left(10.0, \max\left(0.0, \left(\alpha \cdot \frac{\text{CVSS}_{\text{base}}}{10.0} + \beta \cdot \text{EPSS} + \gamma \cdot \text{Criticality}_{\text{MITRE}}\right) \times 10.0\right)\right)
+\text{PSSS} = \min\left(10.0, \max\left(0.0, \left(\alpha \cdot \frac{\text{CVSS}_{\text{base}}}{10.0} + \beta \cdot \text{EPSS} + \gamma \cdot \text{Criticality}_{\text{MITRE}}\right) \times 10.0 \times \mu\right)\right)
 $$
 
 ### Default Weight Distribution
@@ -181,12 +272,15 @@ ThreatLens-AI/
 
 ---
 
-## 🚀 Getting Started
+## ⚙️ Setup Instructions
 
 ### Prerequisites
+Before running ThreatLens.AI, ensure you have the following installed on your machine:
 - **Python**: `3.10` or higher
 - **Node.js**: `18.x` or higher (`npm` included)
 - **Git**: For version control
+
+---
 
 ### Environment Setup
 
@@ -197,7 +291,7 @@ ThreatLens-AI/
    ```
 
 2. **Configure Frontend Environment**:
-   Copy the example environment file and configure your Gemini API key (optional for local Ollama use):
+   Copy the example environment file and configure your Gemini API key (optional if using local Ollama):
    ```bash
    cp frontend/.env.example frontend/.env
    ```
@@ -224,8 +318,8 @@ ThreatLens-AI/
 
 ### One-Click Launch
 
-#### Local Mode (Recommended for Development)
-Starts both the FastAPI backend (port `8000`) and the Vite React frontend (port `5173`):
+#### Local Mode (Recommended for Testing & Development)
+Launches both the FastAPI backend (port `8000`) and the Vite React frontend (port `5173`) concurrently:
 ```bash
 chmod +x launch_local.sh
 ./launch_local.sh
@@ -233,7 +327,7 @@ chmod +x launch_local.sh
 
 - 🌐 **Web Dashboard**: [http://localhost:5173](http://localhost:5173)
 - 🔌 **Backend API**: [http://localhost:8000](http://localhost:8000)
-- 📚 **Swagger Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- 📚 **Interactive Swagger API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 #### Remote / Tunnel Mode (with ngrok)
 ```bash
@@ -245,15 +339,15 @@ chmod +x launch.sh
 
 ### Manual Execution
 
-If you prefer running services in separate terminal windows:
+If you prefer running services independently across separate terminal windows:
 
-**Terminal 1 (Backend)**:
+**Terminal 1 — Backend (FastAPI)**:
 ```bash
 cd backend
 python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-**Terminal 2 (Frontend)**:
+**Terminal 2 — Frontend (Vite React)**:
 ```bash
 cd frontend
 npm run dev
