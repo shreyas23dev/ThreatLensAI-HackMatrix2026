@@ -24,7 +24,6 @@
 | :--- | :--- |
 | **Project Title** | **ThreatLens.AI** |
 | **Team Name** | **Stratos** |
-| **Live Demonstration Link** | 🔗 *[Live Demo Placeholder — Deployment in Progress](#-live-demonstration-link)* |
 | **Primary Domain** | Cybersecurity, Threat Intelligence, Predictive Risk Scoring & Autonomous AI |
 
 ---
@@ -35,7 +34,6 @@
 - [👥 Team Members](#-team-members)
 - [🚨 Problem Statement](#-problem-statement)
 - [💡 Solution Overview](#-solution-overview)
-- [🌐 Live Demonstration Link](#-live-demonstration-link)
 - [🛠️ Technology Stack](#️-technology-stack)
 - [✨ Key Features](#-key-features)
 - [🏗️ Architecture & System Design](#️-architecture--system-design)
@@ -88,14 +86,6 @@ Modern Security Operations Centers (SOCs) and vulnerability management teams are
 * **Interactive ThreatEngine & Analytics**: Real-time MITRE ATT&CK tactic heatmaps with multi-metric interpolation, Top CVE priority rankings, CIA Triad impact breakdowns, and comprehensive APT actor dossiers with one-click IOC copying.
 * **Executive & Operational Intel Reports**: Print-ready and exportable PDF intelligence briefings with dark preview mode and customizable modules for leadership and auditors.
 
----
-
-## 🌐 Live Demonstration Link
-
-> 🚀 **Live Demo Status**: *Coming Soon / Under Deployment*
-
-* **Live Demo URL**: `https://threatlens-ai-demo.placeholder.com` *(Placeholder — Live instance link will be populated here upon deployment)*
-* **Local Interactive Demo**: You can run and test the complete application locally in under 2 minutes by following the [Setup Instructions](#️-setup-instructions) below.
 
 ---
 
