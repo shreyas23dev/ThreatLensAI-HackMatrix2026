@@ -1,6 +1,6 @@
 # 🛡️ ThreatLens.AI
 
-### **Adaptive Vulnerability Prioritization Engine & Cyber Threat Intelligence Command Center**
+### **Adaptive Vulnerability Prioritization Engine & AI & Machine Learning Command Center**
 *Empowering SOC analysts, incident response teams, and CISOs to triage, contextualize, and remediate high-impact vulnerabilities using dynamic PSSS scoring, MITRE ATT&CK intelligence, and autonomous AI agents.*
 
 ---
@@ -25,8 +25,7 @@
 | :--- | :--- |
 | **Project Title** | **ThreatLens.AI** |
 | **Team Name** | **Stratos** |
-| **Hackathon Track** | **🤖 AI & Machine Learning** (*Intelligent solutions using AI, ML, automation, predictive analytics & autonomous agents*) |
-| **Primary Domain** | Cybersecurity, Threat Intelligence, Predictive Risk Scoring & Autonomous AI |
+| **Domain/Track** | **🤖 AI & Machine Learning** (*Intelligent solutions using AI, ML, automation, predictive analytics & autonomous agents*) |
 
 ---
 
@@ -71,14 +70,14 @@ Modern Security Operations Centers (SOCs) and vulnerability management teams are
 ### Key Challenges in Traditional Vulnerability Management:
 1. **Alert Fatigue & Overwhelming Backlog**: Thousands of new vulnerabilities emerge each month. Security analysts spend hours sifting through noisy alerts without knowing which vulnerabilities pose immediate existential risk.
 2. **Limitations of Static CVSS Scores**: Traditional **Common Vulnerability Scoring System (CVSS)** scores only measure intrinsic technical severity in isolation. A CVSS 9.8 vulnerability with zero real-world exploit availability often draws resources away from a CVSS 7.2 vulnerability actively weaponized by ransomware gangs.
-3. **Disconnected Threat Intelligence**: Exploit prediction statistics (**EPSS**), adversary tactics (**MITRE ATT&CK**), and active Advanced Persistent Threat (**APT**) campaigns are siloed in disparate feeds and rarely synthesized dynamically into operational triage queues.
+3. **Disconnected AI & Machine Learning Intelligence Feeds**: Exploit prediction statistics (**EPSS**), adversary tactics (**MITRE ATT&CK**), and active Advanced Persistent Threat (**APT**) campaigns are siloed in disparate feeds and rarely synthesized dynamically into operational triage queues.
 4. **Slow Manual Triage & Inaction**: Analysts lack autonomous assistance to instantly query vulnerability telemetry, adjust risk weights for unique organization contexts, predict missing CVE vector metrics, and trigger immediate remediation workflows.
 
 ---
 
 ## 💡 Solution Overview
 
-**ThreatLens.AI** is an adaptive, intelligence-driven vulnerability prioritization engine and cyber threat command center built to transform how enterprises triage security risk.
+**ThreatLens.AI** is an adaptive, intelligence-driven vulnerability prioritization engine and AI & Machine Learning command center built to transform how enterprises triage security risk.
 
 ### Core Innovations & Capabilities:
 
@@ -118,7 +117,7 @@ ThreatLens.AI is architected with a modern, high-performance, and modular techno
 - **Local / Edge LLM**: [Ollama](https://ollama.ai/) (`llama3.2`, `qwen2.5`, `deepseek-r1`, `mistral`)
 - **Autonomous Tool Calling**: Custom JSON Schema function-calling dispatcher executing real-time backend state modifications
 
-### **Cybersecurity Datasets & Intelligence Feeds**
+### **AI & Machine Learning Datasets & Intelligence Feeds**
 - **Vulnerability Data**: [NIST National Vulnerability Database (NVD)](https://nvd.nist.gov/) CVE API v2.0
 - **Exploit Probability**: [FIRST EPSS (Exploit Prediction Scoring System)](https://www.first.org/epss/)
 - **Tactics & Techniques**: [MITRE ATT&CK® Enterprise Matrix](https://attack.mitre.org/)
