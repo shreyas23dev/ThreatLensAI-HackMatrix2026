@@ -6,6 +6,7 @@
 ---
 
 [![Team: Stratos](https://img.shields.io/badge/Team-Stratos-FF6B6B.svg?style=flat-square&logo=shield)](https://github.com/shreyas23dev/ThreatLens-AI)
+[![Track: AI & Machine Learning](https://img.shields.io/badge/Track-AI_%26_Machine_Learning-blueviolet.svg?style=flat-square&logo=openai)](https://github.com/shreyas23dev/ThreatLens-AI)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100.0+-009688.svg?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/React-19.x-61DAFB.svg?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -24,6 +25,7 @@
 | :--- | :--- |
 | **Project Title** | **ThreatLens.AI** |
 | **Team Name** | **Stratos** |
+| **Hackathon Track** | **🤖 AI & Machine Learning** (*Intelligent solutions using AI, ML, automation, predictive analytics & autonomous agents*) |
 | **Primary Domain** | Cybersecurity, Threat Intelligence, Predictive Risk Scoring & Autonomous AI |
 
 ---
